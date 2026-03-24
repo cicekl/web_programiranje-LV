@@ -113,3 +113,36 @@ a.image-popup-vertical-fit {
   font-size: 40px;
   text-decoration: none;
 }
+
+
+/* reponzivnost */
+
+@media (max-width: 1200px) {
+  .galerija_slike {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 900px) {
+  .galerija_slike {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  h1 {
+    font-size: 32px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .galerija_slike {
+    grid-template-columns: 1fr; 
+  }
+  h1 {
+    font-size: 24px; 
+  }
+  .lightbox img {
+    max-width: 95%; 
+  }
+  .close {
+    font-size: 30px;
+  }
+}

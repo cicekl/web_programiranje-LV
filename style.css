@@ -7,11 +7,62 @@ body {
     text-align: center;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Header i navigacija */
 header {
     background: #222;
     color: white;
     padding: 5px;
+}
+
+header, footer {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+.table-img-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
+.table-container {
+    overflow-x: auto; 
+    width: 100%;
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+}
+
+main {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+header h1, footer p {
+    margin: 0;
+    text-align: center;
+}
+
+.img-cinema {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 h1 {
@@ -84,13 +135,6 @@ text-decoration: none;}
     text-decoration: none; 
     color: white;
     font-weight: bold;
-}
-
-.table-img-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
 }
 
 table, th, td {
@@ -191,6 +235,11 @@ footer {
 
 /* Responzivnost */
 @media (max-width: 768px) {
+
+    html, body {
+        overflow-x: hidden; 
+    }
+
     .data-container {
         flex-direction: column;
         align-items: center;
@@ -209,4 +258,118 @@ footer {
     .form-flex input, .form-flex button {
         width: 100%;
     }
+
+     .table-img-container {
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-cinema {
+        width: 100%; 
+        height: auto;
+    }
+
+    .table-img-container table {
+        width: 100%; 
+        overflow-x: auto;
+    }
+
+    .table-img-container {
+        overflow-x: auto;
+    }
+
+    aside {
+        margin-top: 20px;
+    }
+
+    .img-cinema {
+        width: 500px;
+        height: 400px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static; 
+        width: 100%;
+    }
+
+    .dropdown-content li {
+        text-align: center;
+    }
+
+     .dropdown-content {
+        display: none;
+    }
+
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+
+    .nav-toggle {
+        cursor: pointer;
+    }
+
+    .nav-toggle:focus {
+        outline: none; 
+    }
+
+    .dropdown-content li a {
+        display: block;
+        padding: 12px 16px;
+    }
+    
 }
+
+@media (min-width: 920px) and (max-width: 1024px) {
+    .table-img-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .img-cinema {
+        width: 600px;
+        height: 450px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .dropdown {
+        width: auto;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        display: none;
+        min-width: 160px;
+        background-color: #222;
+        z-index: 1;
+        border-radius: 10px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content li {
+        text-align: left;
+    }
+}
+
