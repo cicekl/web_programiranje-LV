@@ -7,6 +7,29 @@
   <link rel="stylesheet" href="./grafikon_style.css">
 </head>
 <body>
+<header>
+		<h1>Filmovi</h1>
+</header>
+<header>
+   		<nav aria-labelledby="primarna-navigacija">
+        </nav>
+			<nav role="navigation"> <!-- dodati obilježja za ARIA-->
+				<ul>
+					<li class="dropdown">
+						<h2 id="primarna-navigacija" class="nav-toggle">Primarna navigacija</h2>
+						<ul class="dropdown-content"> <!-- dodati da je navigacija lijevo poravnata i da je skrivena				
+							LV1: bez upotrebe javascripta -->
+							<li><a href="index.html">Pocetna</a></li>
+							<li><a href="grafikon.html">Grafikon</a></li>
+							<li><a href="slike.html">Slike</a></li>
+						</ul>
+					</li>	
+					
+				</ul>
+			</nav>
+</header>
+
+<main>
   <h1>Filmovi po žanru</h1>
   <div class="simple-bar-chart">
     <div class="item" style="--val: 32; --clr: var(--drama)">
@@ -26,5 +49,9 @@
       <div class="value">32%</div>
     </div>
   </div>
+</main>
+  <footer>
+		<p>&copy; 2026. Web Programiranje. Sva prava pridrzana.</p>
+</footer>
 </body>
 </html>
