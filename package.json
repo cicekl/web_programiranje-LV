@@ -1,0 +1,25 @@
+{
+  "name": "web_programiranje-lv",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+      "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cicekl/web_programiranje-LV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cicekl/web_programiranje-LV/issues"
+  },
+  "homepage": "https://github.com/cicekl/web_programiranje-LV#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
