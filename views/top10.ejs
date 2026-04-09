@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Galerija slika</title>
+	<title>Top 10 filmova</title>
 	<link rel="stylesheet" href="/style/style_slike.css">
 </head>
 
@@ -29,21 +29,21 @@
 	</nav>
 </header>
 
-<section class="galerija" aria-label="Galerija slika"> 
-	<h1>Galerija slika</h1>
+<section class="galerija" aria-label="Top 10 filmova"> 
+	<h1>Top 10 filmova</h1>
 	<div class="galerija_slike">
 
 		<% images.forEach((image) => { %>
 			<figure class="galerija_slika">
 				<a href="#<%= image.id %>">
-					<img src="<%= image.url %>" alt="<%= image.title %>">
+					<img src="<%= image.url %>" alt="<%= image.title %>" loading="lazy">
 				</a>
 				<figcaption><%= image.title %></figcaption>
 			</figure>
 
 			<div id="<%= image.id %>" class="lightbox">
 				<a href="#" class="close" aria-label="Zatvori sliku">×</a>
-				<img src="<%= image.full %>" alt="<%= image.title %>">
+				<img src="<%= image.full || image.url %>" alt="<%= image.title %>">
 			</div>
 		<% }) %>
 

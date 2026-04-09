@@ -211,6 +211,18 @@ text-decoration: none;}
     font-weight: bold;
 }
 
+.galerija_slika {
+  text-align: center;
+  padding: 10px;
+}
+
+.galerija_slika img {
+  width: 100%;
+  max-width: 250px; 
+  height: 200px;    
+  object-fit: cover; 
+}
+
 /* reponzivnost */
 
 @media (max-width: 1200px) {

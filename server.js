@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,6 +23,22 @@ app.get('/slike', (req, res) => {
   }));
 
   res.render('slike', { images });
+});
+
+app.get('/top10', (req, res) => {
+  const files = fs.readdirSync(path.join(__dirname, 'public/images'));
+
+  const images = files
+    .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
+    .slice(0, 12)
+    .map((f, i) => ({
+      url: `/images/${f}`,
+      full: `/images/${f}`,
+      id: `film${i + 1}`,
+      title: `Slika ${i + 1}`,
+    }));
+
+  res.render('top10', { images });
 });
 
 app.listen(PORT, () => {
