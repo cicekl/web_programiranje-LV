@@ -2,6 +2,42 @@
 include "includes/db.php";
 include "includes/auth.php";
 
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["obrisi_sliku"])) {
+    requireAdmin();
+
+    $id_slika = (int)($_POST["id_slika"] ?? 0);
+
+    if ($id_slika > 0) {
+        $getSql = "SELECT putanja FROM slike WHERE id = ?";
+        $getStmt = mysqli_prepare($conn, $getSql);
+        mysqli_stmt_bind_param($getStmt, "i", $id_slika);
+        mysqli_stmt_execute($getStmt);
+        $getResult = mysqli_stmt_get_result($getStmt);
+        $slika = mysqli_fetch_assoc($getResult);
+
+        if ($slika) {
+            if (file_exists($slika["putanja"])) {
+                unlink($slika["putanja"]);
+            }
+
+            $delOcjeneSql = "DELETE FROM ocjene_slika WHERE id_slika = ?";
+            $delOcjeneStmt = mysqli_prepare($conn, $delOcjeneSql);
+            mysqli_stmt_bind_param($delOcjeneStmt, "i", $id_slika);
+            mysqli_stmt_execute($delOcjeneStmt);
+
+            $delSql = "DELETE FROM slike WHERE id = ?";
+            $delStmt = mysqli_prepare($conn, $delSql);
+            mysqli_stmt_bind_param($delStmt, "i", $id_slika);
+            mysqli_stmt_execute($delStmt);
+        }
+    }
+
+    header("Location: galerija.php");
+    exit;
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["rate_image"])) {
     requireLogin();
 
@@ -154,6 +190,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["dodaj_sliku"])) {
                     <figcaption>
                         <?php echo htmlspecialchars($slika["opis"] ?: $slika["naziv_datoteke"]); ?>
                     </figcaption>
+
+                    <?php if (isAdmin()): ?>
+                        <form method="POST" action="galerija.php" 
+                            onsubmit="return confirm('Jeste li sigurni da želite obrisati ovu sliku?');">
+                            <input type="hidden" name="obrisi_sliku" value="1">
+                            <input type="hidden" name="id_slika" value="<?php echo $slika["id"]; ?>">
+                            <button type="submit" class="btn-obrisi">🗑 Obriši</button>
+                        </form>
+                    <?php endif; ?>
 
                     <p class="prosjek-ocjena">
                         Prosječna ocjena:

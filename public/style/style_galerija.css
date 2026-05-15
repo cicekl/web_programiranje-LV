@@ -65,3 +65,20 @@
 .admin-upload button[type="submit"]:hover {
     background: #6f4529;
 }
+
+.btn-obrisi {
+    margin-top: 6px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #8b2a2a;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-obrisi:hover {
+    background: #6f1a1a;
+}
