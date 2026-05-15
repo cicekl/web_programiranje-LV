@@ -68,7 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["dodaj_sliku"])) {
     exit;
 }
 
-
 ?>
 
 <!DOCTYPE html>
