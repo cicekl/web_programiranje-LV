@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -12,6 +12,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -81,6 +84,7 @@ li.dropdown {
 }
 
 main {
+    flex:1;
     width: 100%;
     padding: 10px 20px;
 }
@@ -223,12 +227,90 @@ button:hover {
 
 footer {
     width: 100%;
-    margin-top: 30px;
     padding: 10px 20px;
     background: #222;
     color: white;
 }
 
+/* Hamburger menu */
+
+nav {
+    text-align: left;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+li.dropdown {
+    position: relative;
+    display: inline-block;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+.nav-toggle {
+    width: 46px;
+    height: 42px;
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+    background-color: #6e472c;
+    outline: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    min-width: 180px;
+    background-color: #222;
+    border-radius: 10px;
+    z-index: 20;
+}
+
+.dropdown-content li {
+    padding: 0;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.dropdown-content a:hover {
+    background-color: #8b5e3c;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+.admin-add-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 25px 0 30px;
+    width: 100%;
+}
 
 @media (max-width: 768px) {
     html, body {
@@ -270,7 +352,7 @@ footer {
         text-align: center;
     }
 
-    .dropdown:focus-within .dropdown-content {
-        display: block;
-    }
+    .dropdown.open .dropdown-content {
+    display: block;
+}
 }

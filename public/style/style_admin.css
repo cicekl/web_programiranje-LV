@@ -1,0 +1,285 @@
+
+.admin-form-section {
+    width: 100%;
+    max-width: 850px;
+    margin: 35px auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.afs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, #222831, #393e46);
+    color: #ffffff;
+}
+
+.afs-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.afs-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.afs-title {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.afs-subtitle {
+    margin: 4px 0 0;
+    font-size: 0.92rem;
+    opacity: 0.82;
+}
+
+.admin-badge {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #ffd369;
+    color: #222831;
+    font-weight: 700;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.afs-body {
+    padding: 30px;
+}
+
+.admin-movie-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.span2 {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: #222831;
+    font-size: 0.95rem;
+}
+
+.req {
+    color: #d62828;
+}
+
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 1rem;
+    color: #777;
+    pointer-events: none;
+}
+
+.admin-movie-form input,
+.admin-movie-form select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d7d7d7;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #ffffff;
+    color: #222831;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.input-wrap input {
+    padding-left: 42px;
+}
+
+.admin-movie-form input:focus,
+.admin-movie-form select:focus {
+    border-color: #393e46;
+    box-shadow: 0 0 0 4px rgba(57, 62, 70, 0.12);
+}
+
+.admin-movie-form input:hover,
+.admin-movie-form select:hover {
+    border-color: #999;
+}
+
+.field-hint {
+    color: #666;
+    font-size: 0.82rem;
+}
+
+.form-divider {
+    grid-column: span 2;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #dddddd, transparent);
+    margin: 4px 0;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 22px;
+    padding: 13px 15px;
+    border-radius: 12px;
+    background: #fff3f3;
+    color: #b00020;
+    border: 1px solid #ffc9c9;
+    font-weight: 600;
+}
+
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-save {
+    border: none;
+    border-radius: 12px;
+    padding: 13px 22px;
+    background: #222831;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-save:hover {
+    background: #393e46;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.btn-save:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.cancel-edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    background: #eeeeee;
+    color: #222831;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cancel-edit:hover {
+    background: #dddddd;
+    transform: translateY(-1px);
+}
+
+/* BUTTON DODAJ FILM NA INDEX.PHP */
+
+.admin-add-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0 14px;
+}
+
+.admin-add-button a {
+    text-decoration: none;
+}
+
+.admin-add-button button {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    background: #222831;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.admin-add-button button:hover {
+    background: #393e46;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .admin-form-section {
+        margin: 25px 12px;
+        border-radius: 14px;
+    }
+
+    .afs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+    }
+
+    .afs-body {
+        padding: 22px;
+    }
+
+    .admin-movie-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.span2,
+    .form-divider,
+    .form-actions {
+        grid-column: span 1;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-save,
+    .cancel-edit {
+        width: 100%;
+        text-align: center;
+    }
+
+    .admin-add-button {
+        justify-content: center;
+    }
+
+    .admin-add-button button {
+        width: 100%;
+    }
+}
